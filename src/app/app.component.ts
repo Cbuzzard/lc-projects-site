@@ -9,15 +9,15 @@ export class AppComponent implements AfterContentInit{
   
   @ViewChild('wrapper')
   wrapper;
+  @ViewChild('header')
+  header;
   @ViewChild('rocketContainer')
   rocketContainer;
   @ViewChild('assignments')
   assignments;
-  @ViewChild('logo')
-  logo;
   @ViewChild('logoRocket')
   logoRocket;
-  totalframes = 94;
+  totalframes = 89;
   frame = 0
   timePerFrame = 30
 
@@ -36,11 +36,10 @@ export class AppComponent implements AfterContentInit{
   }
 
   openLogo() {
-    this.logo.nativeElement.classList.add('logo-open')
+    this.header.nativeElement.classList.add('logo-open')
     this.logoRocket.nativeElement.classList.add('logo-rocket-move')
     this.wrapper.nativeElement.classList.add('scroll')
     this.rocketContainer.nativeElement.style.display = 'none'
-    console.log(this.assignments)
   }
 
 }
