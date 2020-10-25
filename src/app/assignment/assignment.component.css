@@ -1,33 +1,65 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
+    max-width: 800px;
     margin: auto;
 }
 
+.sort {
+    margin-left: 2vw;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
 .card {
+    background-image: url(../../assets/galaxy_background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.445);
-    height: 300px;
     width: 100%;
-    margin: 0 60px;
-
+    margin: 0 2vw;
+    z-index: 2;
 }
 
 .card-container {
+    text-align: center;
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    /* width: fit-content; */
-    margin: 50px 0;
-    flex: 50%;
-
+    margin: 20px 0;
+    flex: 80%;
 }
 
 .galaxy {
+    background-image: url(../../assets/galaxy_small.png);
     position: absolute;
-    z-index: 2;
-    top: -180px;
-    left: -120px;
-    /* height: 40%; */
+    margin-left: -250px;
+    margin-top: -210px;
+    top: 20px;
+    left: 80px;
+    height: 420px;
+    width: 500px;
+}
+
+.code-button {
+    width: 100%;
+    margin-top: 10px !important;
+}
+
+@media only screen and (max-width: 625px) {
+    .card {
+        background-position-x: 50px;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 484px) {
+    .card {
+        background-position-x: -100px;
+    }
 }

@@ -1,31 +1,17 @@
-<div class="flex-container">
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
-    </div>
-    
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
-    </div>
-    
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
-    </div>
-    
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
-    </div>
-
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
-    </div>
-
-    <div class="card-container">
-        <img class="galaxy" src="../../assets/galaxy_small.png" alt="">
-        <mat-card class="card"></mat-card>
+<div #cardContainer class="flex-container">
+    <mat-form-field class="sort" appearance="outline">
+        <mat-label>Sort By</mat-label>
+        <mat-select [(value)]='selectedSort' (selectionChange)="setAssignments()">
+            <mat-option value="assignment">Assignment</mat-option>
+            <mat-option value="demo">Demo</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="card-container" *ngFor="let assignment of assignments">
+        <mat-card class="card">
+            <h2 class="title">{{assignment.title}}</h2>
+            <p class="tech">{{assignment.tech}}</p>
+            <a [href]="assignment.repo" target="_blank"><button class="code-button" mat-stroked-button color="primary">Repository</button></a>
+            <a *ngIf="assignment.demo" [href]="assignment.demo" target="_blank"><button class="code-button" mat-stroked-button color="primary">Demo</button></a>
+        </mat-card>
     </div>
 </div>
